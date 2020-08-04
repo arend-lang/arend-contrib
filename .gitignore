@@ -1,5 +1,8 @@
 .idea/workspace.xml
 .idea/misc.xml
 .idea/vcs.xml
+.idea/gradle.xml
+.idea/jarRepositories.xml
+.idea/$CACHE_FILE$
 .idea/codeStyles/*
 .bin

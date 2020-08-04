@@ -32,10 +32,6 @@ public class ContextHelper implements Context {
     }
   }
 
-  public ContextHelper(ConcreteExpression hint) {
-    this(Context.TRIVIAL, hint);
-  }
-
   public static MetaDefinition getMeta(ConcreteExpression expr) {
     ConcreteExpression expression = expr instanceof ConcreteGoalExpression ? ((ConcreteGoalExpression) expr).getExpression() : expr;
     if (!(expression instanceof ConcreteAppExpression)) {
