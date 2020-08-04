@@ -1,7 +1,7 @@
 \import Data.Bool.Base
 
-\func not-not-id (b : Bool) : not (not b) = b
+\func not-not (b : Bool) : not (not b) = b
   | true => idp
   | false => idp
 
-\func Bool=Bool-not : Bool = Bool => path (iso not not not-not-id not-not-id)
+\func Bool=Bool-not : Bool = Bool => path (iso not not not-not not-not)

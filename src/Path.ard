@@ -1,0 +1,43 @@
+\func pmap {A B : \Type} (f : A -> B) {a a' : A} (p : a = a') : f a = f a' =>
+  path (\lam i => f (p @ i))
+
+\func transport {A : \Type} (B : A -> \Type) {a a' : A} (p : a = a') (b : B a) : B a'
+  => coe (\lam i => B (p @ i)) b right
+
+\func inv {A : \Type} {a a' : A} (p : a = a') : a' = a \elim p
+  | idp => idp
+
+\func \infixr 9 *> {A : \Type} {a a' a'' : A} (p : a = a') (q : a' = a'') : a = a'' \elim q
+  | idp => p
+  \where
+    \func concat {A : I -> \Type} {a : A left} {a' a'' : A right} (p : Path A a a') (q : a' = a'') : Path A a a'' \elim q
+      | idp => p
+
+\func \infixr 9 <* {A : \Type} {a a' a'' : A} (p : a = a') (q : a' = a'') : a = a'' \elim p
+  | idp => q
+  \where
+    \func concat {A : I -> \Type} {a a' : A left} {a'' : A right} (p : a = a') (q : Path A a' a'') : Path A a a'' \elim p
+      | idp => q
+
+\func pmap-*>-comm {A B : \Type} (f : A -> B) {a a' a'' : A} (p : a = a') (q : a' = a'')
+  : pmap f (p *> q) = pmap f p *> pmap f q \elim q
+  | idp => idp
+
+\func pmap-<*-comm {A B : \Type} (f : A -> B) {a a' a'' : A} (p : a = a') (q : a' = a'')
+  : pmap f (p <* q) = pmap f p <* pmap f q \elim p
+  | idp => idp
+
+\func inv-inv {A : \Type} {a a' : A} (p : a = a') : inv (inv p) = p
+  | idp => idp
+
+\func inv-*> {A : \Type} {a a' : A} (p : a = a') : inv p *> p = idp
+  | idp => idp
+
+\func *>-inv {A : \Type} {a a' : A} (p : a = a') : p *> inv p = idp
+  | idp => idp
+
+\func idp-*> {A : \Type} {a a' : A} (p : a = a') : idp *> p = p
+  | idp => idp
+  \where
+    \func idp-concat {A : \Type} {a a' : A} (p : a = a') : *>.concat idp p = p \elim p
+      | idp => idp
