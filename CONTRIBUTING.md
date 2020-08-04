@@ -19,7 +19,7 @@
   + In case `A` is actually multiple words, use camelCase.
 + If you are very strong on a nonstandard name and have clear reasons, you can
   comment it and it might be allowed.
-+ Use commonly accepted shorthands, such as (complete this list when you use a new one):
++ Use commonly accepted and unambiguous suffix shorthands, such as (complete this list when you use a new one):
   + `-inj` and `-surj` for injectivity and surjectivity.
   + `-nat` for naturality.
   + `-equiv` -- when you're looking for this, use infix `=` or `~=` instead.
