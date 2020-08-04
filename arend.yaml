@@ -2,3 +2,5 @@ langVersion: 1.4.1
 sourcesDir: src
 testsDir: test
 binariesDir: .bin
+extensionsDir: meta/build/classes/java/main
+extensionMainClass: org.arend.contrib.StdExtension
