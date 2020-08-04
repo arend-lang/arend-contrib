@@ -9,7 +9,10 @@
 + Capitalize names of types (including type parameters), classes, instances, and
   people or place or whatever real-world names.
 + Capitalize package and module names, reuse Haskell and [HoTT-Coq] names if possible.
-+ Do not capitalize other words, like `generalized` or `contr`.
+  + If you're defining a structure and prove some theorems on it, put the
+    definition and its basic operations under a module `Base`, then put other
+    things in separated modules. See [Bool/Base] and [Bool/Properties].
++ Do not capitalize other words.
 + Use symbols if appropriate, like `>=`, `>=>`, etc. Try to be ligature-friendly.
 + Names should be in hyphen-separated-lowercase-words.
 + If there is a very common phrase, camelCase it (like `BinaryTree`, `mergeSort`).
@@ -31,6 +34,8 @@
 
  [HoTT-Coq]: https://github.com/HoTT/HoTT
  [HoTT-Agda]: https://github.com/HoTT/HoTT-Agda
+ [Bool/Base]: src/Data/Bool/Base.ard
+ [Bool/Properties]: src/Data/Bool/Properties.ard
 
 Examples:
 
