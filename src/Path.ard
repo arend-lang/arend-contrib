@@ -4,6 +4,9 @@
 \func transport {A : \Type} (B : A -> \Type) {a a' : A} (p : a = a') (b : B a) : B a'
   => coe (\lam i => B (p @ i)) b right
 
+\func transport-inv {A : \Type} (B : A -> \Type) {a a' : A} (p : a = a') (b : B a') : B a \elim p
+  | idp => b
+
 \func inv {A : \Type} {a a' : A} (p : a = a') : a' = a \elim p
   | idp => idp
 
